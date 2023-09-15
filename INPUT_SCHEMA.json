@@ -16,13 +16,11 @@
             "title": "Dataset ID",
             "type": "string",
             "nullable": false,
-            "description": "The dataset to write output data to.",
-            "editor": "textfield",
-            "example": "default",
-            "prefill": "default"
+            "description": "The dataset to write output data to. Optional.",
+            "editor": "textfield"
         }
     },
     "required": [
-        "url", "datasetId"
+        "url"
     ]
 }
