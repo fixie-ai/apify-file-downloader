@@ -8,8 +8,10 @@ const { url, datasetId } = await Actor.getInput();
 console.log(`Requested dataset ID is ${datasetId}`);
 let dataset;
 if (datasetId) {
+  console.log(`Getting specific dataset`);
   dataset = await Actor.openDataset(datasetId);
 } else {
+  console.log(`Getting default dataset`);
   dataset = await Actor.openDataset();
 }
 const actualDatasetId = dataset.getInfo().id;
