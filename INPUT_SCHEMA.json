@@ -11,9 +11,18 @@
             "editor": "textfield",
             "example": "http://www.pdf995.com/samples/pdf.pdf",
             "prefill": "http://www.pdf995.com/samples/pdf.pdf"
+        },
+        "datasetId": {
+            "title": "Dataset ID",
+            "type": "string",
+            "nullable": false,
+            "description": "The dataset to write output data to.",
+            "editor": "textfield",
+            "example": "default",
+            "prefill": "default"
         }
     },
     "required": [
-        "url"
+        "url", "datasetId"
     ]
 }

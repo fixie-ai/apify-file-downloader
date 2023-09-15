@@ -3,14 +3,18 @@ import got from "got";
 
 await Actor.init();
 
-const { url } = await Actor.getInput();
+const { url, datasetId } = await Actor.getInput();
+
+const dataset = await Actor.openDataset(datasetId);
+
+console.log(`Downloading ${url} to dataset ${datasetId}`);
 
 try {
   const response = await got(url);
   const rawData = response.buffer();
   const b64Data = rawData.toString("base64");
   console.log(`Successfully downloaded ${url}: ${rawData.length} bytes`);
-  await Actor.pushData({
+  await dataset.pushData({
     url: url,
     mimeType: response.headers["content-type"],
     data: b64Data,
