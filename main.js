@@ -11,7 +11,10 @@ console.log(`Downloading ${url} to dataset ${datasetId}`);
 
 try {
   const response = await got(url);
-  const rawData = response.buffer();
+  if (!response || !response.ok) {
+    throw new Error(`Error fetching ${url}: ${response}`);
+  }
+  const rawData = response.rawBody;
   const b64Data = rawData.toString("base64");
   console.log(`Successfully downloaded ${url}: ${rawData.length} bytes`);
   await dataset.pushData({
