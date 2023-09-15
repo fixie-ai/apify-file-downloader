@@ -2,9 +2,10 @@
     "name": "apify-file-downloader",
     "version": "0.0.1",
     "dependencies": {
-        "apify": "^2.2.0",
-        "got":"^11.8.6"
+        "apify": "^3.1.10",
+        "got": "^13.0.0"
     },
+    "type": "module",
     "scripts": {
         "start": "node main.js"
     }
