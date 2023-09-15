@@ -1,0 +1,19 @@
+{
+    "title": "File Downloader",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "url": {
+            "title": "File URL",
+            "type": "string",
+            "nullable": false,
+            "description": "The URL of file to be downloaded.",
+            "editor": "textfield",
+            "example": "http://www.pdf995.com/samples/pdf.pdf",
+            "prefill": "http://www.pdf995.com/samples/pdf.pdf"
+        }
+    },
+    "required": [
+        "url"
+    ]
+}

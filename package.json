@@ -1,0 +1,11 @@
+{
+    "name": "apify-file-downloader",
+    "version": "0.0.1",
+    "dependencies": {
+        "apify": "^2.2.0",
+        "got":"^11.8.6"
+    },
+    "scripts": {
+        "start": "node main.js"
+    }
+}
