@@ -6,6 +6,7 @@ await Actor.init();
 const { url, datasetId } = await Actor.getInput();
 
 console.log(`Requested dataset ID is ${datasetId}`);
+let dataset;
 if (datasetId) {
   dataset = await Actor.openDataset(datasetId);
 } else {
