@@ -26,10 +26,10 @@ try {
   const b64Data = rawData.toString("base64");
   console.log(`Successfully downloaded ${url}: ${rawData.length} bytes`);
   await dataset.pushData({
-    url: url,
+    public_url: url,
+    content: b64Data,
     mimeType: response.headers["content-type"],
-    data: b64Data,
-    dataLength: rawData.length,
+    contentLength: response.headers["content-length"],
     timestamp: new Date().toISOString(),
   });
 } catch (error) {
