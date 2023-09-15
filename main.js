@@ -5,9 +5,13 @@ await Actor.init();
 
 const { url, datasetId } = await Actor.getInput();
 
-const dataset = await Actor.openDataset(datasetId);
+console.log(`Requested dataset ID is ${datasetId}`);
+if (datasetId) {
+  dataset = await Actor.openDataset(datasetId);
+} else {
+  dataset = await Actor.openDataset();
+}
 const actualDatasetId = dataset.getInfo().id;
-
 console.log(`Downloading ${url} to dataset ${actualDatasetId}`);
 
 try {
